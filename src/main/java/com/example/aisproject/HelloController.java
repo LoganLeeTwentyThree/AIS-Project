@@ -9,6 +9,7 @@ public class HelloController {
     public Label welcomeText;
 
     @FXML
-    protected void onHelloButtonClick() {
-    }
+
+    protected void onHelloButtonClick(){}
+
 }
