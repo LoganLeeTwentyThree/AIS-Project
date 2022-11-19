@@ -4,56 +4,45 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0"  fx:controller="com.example.aisproject.Application"  xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
             <MenuBar>
               <menus>
-                <Menu mnemonicParsing="false" text="Home">
+                <Menu mnemonicParsing="false" text="Produce">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Close" />
+                    <MenuItem  fx:id="GrapeFruitButton" mnemonicParsing="false" text="Grapefruit"/>
+                    <MenuItem  fx:id="LemonButton" mnemonicParsing="false" text="Lemons"/>
+                    <MenuItem  fx:id="OrangeButton" mnemonicParsing="false" text="Oranges"/>
+                    <MenuItem  fx:id="TangerineButton" mnemonicParsing="false" text="Tangerines"/>
+                    <MenuItem  fx:id="AppleButton" mnemonicParsing="false" text="Apples"/>
+                    <MenuItem  fx:id="AvocadoButton" mnemonicParsing="false" text="Avocados"/>
+                    <MenuItem  fx:id="CherryButton" mnemonicParsing="false" text="Cherries"/>
+                    <MenuItem  fx:id="GrapeButton" mnemonicParsing="false" text="Grapes"/>
+                    <MenuItem  fx:id="NectarineButton" mnemonicParsing="false" text="Nectarines"/>
+                    <MenuItem  fx:id="OliveButton" mnemonicParsing="false" text="Olives"/>
+                    <MenuItem  fx:id="PeachesButton" mnemonicParsing="false" text="Peaches"/>
                   </items>
                 </Menu>
-                <Menu mnemonicParsing="false" text="Data ">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
-                  </items>
-                </Menu>
-                <Menu mnemonicParsing="false" text="Specific ">
-                  <items>
-                    <MenuItem mnemonicParsing="false" text="About" />
-                  </items>
-                </Menu>
-                  <Menu mnemonicParsing="false" text="Feedback">
-                     <items>
-                        <MenuItem mnemonicParsing="false" text="Close" />
-                     </items>
-                  </Menu>
               </menus>
             </MenuBar>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0">
-               <children>
-                  <LineChart layoutX="36.0" layoutY="19.0" prefHeight="199.0" prefWidth="244.0">
-                    <xAxis>
-                      <CategoryAxis side="BOTTOM" />
-                    </xAxis>
-                    <yAxis>
-                      <NumberAxis side="LEFT" />
-                    </yAxis>
-                  </LineChart>
-                  <LineChart layoutX="310.0" layoutY="22.0" prefHeight="193.0" prefWidth="253.0">
-                     <xAxis>
-                        <CategoryAxis side="BOTTOM" />
-                     </xAxis>
-                     <yAxis>
-                        <NumberAxis side="LEFT" />
-                     </yAxis>
-                  </LineChart>
-                  <Label layoutX="143.0" layoutY="11.0" text="2022 Data" />
-                  <Label layoutX="430.0" layoutY="11.0" text="2023 Estimate " />
-               </children>
-            </AnchorPane>
+             <LineChart  fx:id="lineChart" layoutX="36.0" layoutY="19.0" prefHeight="600.0" prefWidth="800.0">
+                 <xAxis>
+                     <NumberAxis fx:id="xAxis" lowerBound="1980" upperBound="2021" side="BOTTOM" autoRanging="false"/>
+                 </xAxis>
+                 <yAxis>
+                     <NumberAxis fx:id="yAxis" side="LEFT" lowerBound="5000" upperBound="1000000" tickUnit="5000" autoRanging="false"/>
+                 </yAxis>
+             </LineChart>
+             <LineChart  fx:id="predictionLineChart" layoutX="36.0" layoutY="19.0" prefHeight="600.0" prefWidth="800.0">
+                 <xAxis>
+                     <NumberAxis fx:id="pXAxis" lowerBound="2020" upperBound="2031" side="BOTTOM" autoRanging="false"/>
+                 </xAxis>
+                 <yAxis>
+                     <NumberAxis fx:id="pYAxis" side="LEFT" lowerBound="0" upperBound="1000000" tickUnit="5000" autoRanging="false"/>
+                 </yAxis>
+             </LineChart>
          </children>
       </VBox>
    </top>
